@@ -7,10 +7,9 @@ public:
         int longest = 1;
         for (auto num : set) {
             if (set.find(num - 1) == set.end()) {
-                int tmp = num;
                 int newLength = 1;
-                while (set.find(tmp + 1) != set.end()) {
-                    tmp++;
+                while (set.find(num + 1) != set.end()) {
+                    num++;
                     newLength++;
                 }
                 longest = (newLength > longest) ? newLength : longest;
