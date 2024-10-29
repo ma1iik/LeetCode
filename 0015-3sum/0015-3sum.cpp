@@ -23,7 +23,7 @@ public:
             }
             else if (numbers[left] + numbers[right] == target) {
                     ret.push_back({first, numbers[left], numbers[right]});
-                    left++;   
+                    left++; 
             }
             while (left < right && left > start && numbers[left] == numbers[left - 1]) left++;
             while (left < right && right < numbers.size() - 1 && numbers[right] == numbers[right + 1]) right--;
