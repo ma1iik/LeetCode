@@ -5,7 +5,7 @@ public:
         int profit = 0;
         for (const auto& price : prices) {
             minprice = min(price, minprice);
-            profit = ((price - minprice) > profit) ? (price - minprice) : profit;
+            profit = std::max(profit, price - minprice);
         }
         return profit;
     }
