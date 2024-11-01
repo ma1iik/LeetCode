@@ -5,11 +5,17 @@ public:
         int right = height.size() - 1;
         int area = 0;
         while (left < right) {
-            area = max(area, (right - left) * (std::min(height[left], height[right])));
-            if (height[left] < height[right])
+            int leftHeight = height[left];
+            int rightHeight = height[right];
+            int currentArea = (right - left) * (leftHeight < rightHeight ? leftHeight : rightHeight);
+            if (currentArea > area) {
+                area = currentArea;
+            }
+            if (leftHeight < rightHeight) {
                 left++;
-            else
+            } else {
                 right--;
+            }
         }
         return area;
     }
